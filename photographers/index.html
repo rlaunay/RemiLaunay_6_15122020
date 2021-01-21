@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FishEye</title>
+		<link rel="stylesheet" href="./../styles/css/style.css" />
+		<script type="module" src="../js/photographer.js" defer></script>
+	</head>
+	<body>
+		<header class="banner">
+			<a href="/">
+				<img
+					class="header__logo"
+					src="./../assets/img/logo.svg"
+					alt="logo"
+				/>
+			</a>
+		</header>
+		<main class="main">
+			<div class="main-header">
+				<div class="main-header__left">
+					<div class="main-header__heading">
+						<h1 id="p-name" class="main-header__tile"></h1>
+						<button class="btn">Contactez-moi</button>
+					</div>
+					<h2 id="p-location" class="main-header__localisation"></h2>
+					<h3 id="p-tagline" class="main-header__tagline"></h3>
+					<div id="p-tags" class="main-header__tags-list">
+					</div>
+				</div>
+				<img
+					id="p-profil"
+					class="main-header__photo"
+					src=""
+					alt="profif"
+				/>
+			</div>
+
+			<div class="filter">
+				<label class="filter__label" for="filter">Trier par</label>
+				<app-select class="filter__select">
+					<app-option>Popularité</app-option>
+					<app-option>Date</app-option>
+					<app-option>Titre</app-option>
+				</app-select>
+			</div>
+			<ul id="photo-list" class="main__photo-list"></ul>
+		</main>
+	</body>
+</html>
