@@ -1,0 +1,16 @@
+{
+  "name": "remilaunay_6_15122020",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass --watch ./styles/scss/main.scss ./styles/css/style.css",
+    "build": "sass ./styles/scss/main.scss ./styles/css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "sass": "^1.30.0"
+  }
+}
