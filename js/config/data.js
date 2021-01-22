@@ -92,7 +92,7 @@ export const { photographers, media } = {
 		{
 			id: 9275938,
 			photographerId: 82,
-			image: 'Event-_eddingGazebo.jpg',
+			image: 'Event_WeddingGazebo.jpg',
 			tags: ['events'],
 			likes: 69,
 			date: '2018-02-22',
@@ -401,7 +401,7 @@ export const { photographers, media } = {
 		{
 			id: 95234343,
 			photographerId: 243,
-			image: 'Animals_Rainbow.jpg.jpg',
+			image: 'Animals_Rainbow.jpg',
 			tags: ['animals'],
 			likes: 59,
 			date: '2019-07-02',
