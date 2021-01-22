@@ -105,10 +105,10 @@ function createMedia(med) {
 
 	if ('video' in med) {
 		mediaEl = document.createElement('app-video')
-		mediaEl.setAttribute('data-name', med.video) 
+		mediaEl.setAttribute('data-src', med.video) 
 	} else if ('image' in med) {
 		mediaEl = document.createElement('app-photo')
-		mediaEl.setAttribute('data-name', med.image)
+		mediaEl.setAttribute('data-src', med.image)
 	} else {
 		throw new Error('Invalid media type')
 	}
@@ -123,6 +123,7 @@ class AppMedia extends HTMLElement {
 	constructor() {
 		super()
 	}
+
 
 	buildMedia(id, name) {
 		const container = document.createElement('div')
@@ -163,12 +164,13 @@ class AppVideo extends AppMedia {
 	}
 
 	connectedCallback() {
-		const name = this.getAttribute('data-name')
+		const name = this.getAttribute('data-src')
 		this.buildMedia(this.id, name)
-		this.buildVideo(name)	
 	}
 
-	buildVideo(name) {
+	buildMedia(id, name) {
+		super.buildMedia(id, name)
+
 		const video = document.createElement('video')
 		video.src = `../assets/video/${this.getAttribute('data-pId')}/${name}`
 		video.controls = true
@@ -187,12 +189,13 @@ class AppPhoto extends AppMedia {
 	}
 
 	connectedCallback() {
-		const name = this.getAttribute('data-name')
+		const name = this.getAttribute('data-src')
 		this.buildMedia(this.id, name)
-		this.buildPhoto(name)	
 	}
 
-	buildPhoto(name) {
+	buildMedia(id, name) {
+		super.buildMedia(id, name)
+
 		const img = document.createElement('img')
 		img.src = `../assets/img/photographe_photo/${this.getAttribute('data-pId')}/${name}`
 		img.classList.add('media__src')
