@@ -4,21 +4,20 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>FishEye</title>
-		<link rel="stylesheet" href="./../styles/css/style.css" />
-		<link rel="stylesheet" href="../styles/css/style.css" />
+<!--		<link rel="stylesheet" href="./../dist/main.css" />-->
 		<script
 			src="https://kit.fontawesome.com/2c740296bb.js"
 			crossorigin="anonymous"
 			defer
 		></script>
-		<script type="module" src="../js/photographer.js" defer></script>
+<!--		<script type="module" src="./../dist/bundle.js" defer></script>-->
 	</head>
 	<body>
 		<header class="banner">
 			<a href="/">
 				<img
 					class="header__logo"
-					src="./../assets/icon/logo.svg"
+					src="../logo.svg"
 					alt="logo"
 				/>
 			</a>
@@ -45,11 +44,11 @@
 
 			<div class="filter">
 				<label class="filter__label" for="filter">Trier par</label>
-				<app-select class="filter__select">
-					<app-option>Popularité</app-option>
-					<app-option>Date</app-option>
-					<app-option>Titre</app-option>
-				</app-select>
+				<select is="app-select" id="filter">
+					<option>Popularité</option>
+					<option>Date</option>
+					<option>Titre</option>
+				</select>
 			</div>
 			<ul id="photo-list" class="main__media-list">
 			</ul>
