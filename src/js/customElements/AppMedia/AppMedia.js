@@ -23,6 +23,15 @@ export default class AppMedia extends HTMLElement {
         const likesEl = document.createElement('span')
         likesEl.innerText = `${likes}`
         likesEl.classList.add('media__likes')
+        likesEl.addEventListener('click', () => {
+            const likesEl = document.getElementById(id).querySelector('.media__likes')
+            let likes = +likesEl.innerText
+            likes++
+            const ico = likesEl.childNodes[1]
+            likesEl.innerText = likes
+            likesEl.appendChild(ico)
+        })
+
         const heart = document.createElement('div')
         heart.innerHTML = '<i class="fas fa-heart"></i>'
         heart.classList.add('media__likes--logo')

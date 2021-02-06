@@ -16,7 +16,7 @@ const config = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(png|jpg|gif|mp4)$/,
+                test: /\.(png|jpg|gif|mp4|svg)$/,
                 use: {
                     loader: 'file-loader',
                     options: {
