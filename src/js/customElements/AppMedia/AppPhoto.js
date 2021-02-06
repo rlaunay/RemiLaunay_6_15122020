@@ -18,6 +18,12 @@ export default class AppPhoto extends AppMedia {
         img.src = imageLink.default
         img.classList.add('media__src')
 
+        img.addEventListener('click', (e) => {
+            const lightBox = document.createElement('app-lightbox')
+            lightBox.setAttribute('data-clicked-src', e.target.src)
+            document.getElementById('photo-list').appendChild(lightBox)
+        })
+
         const leg = this.querySelector('.media__legend')
         const container = this.querySelector('.media')
         container.insertBefore(img, leg)

@@ -1,9 +1,17 @@
 .photographe-card {
+	max-width: 350px;
 	list-style: none;
-	padding: 0;
+	padding: 20px 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	transition: .3s;
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: 0 1px 7px rgba($color-dark, 0.8);
+		transform: translateY(-5px);
+	}
 
 	&.hide {
 		display: none;

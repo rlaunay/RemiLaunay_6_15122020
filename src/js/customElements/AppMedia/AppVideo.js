@@ -16,9 +16,12 @@ export default class AppVideo extends AppMedia {
         const video = document.createElement('video')
         const videoLink = await import(`./../../../assets/video/${this.getAttribute('data-pId')}/${name}`)
         video.src = videoLink.default
-        video.controls = true
         video.classList.add('media__src')
-
+        video.addEventListener('click', (e) => {
+            const lightBox = document.createElement('app-lightbox')
+            lightBox.setAttribute('data-clicked-src', e.target.src)
+            document.getElementById('photo-list').appendChild(lightBox)
+        })
 
         const leg = this.querySelector('.media__legend')
         const container = this.querySelector('.media')

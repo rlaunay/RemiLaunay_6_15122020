@@ -21,7 +21,7 @@ export default async function updatePhotographeInfo(photographers) {
         tagsEl.innerHTML = ''
         tags.forEach(tag => {
             const span = document.createElement('span')
-            span.classList.add('main-header__tags-list--item')
+            span.classList.add('main-photographe-header__tags-list--item')
             span.innerText = `#${tag}`
             tagsEl.appendChild(span)
         })
