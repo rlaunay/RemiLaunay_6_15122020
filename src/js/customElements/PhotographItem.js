@@ -1,3 +1,5 @@
+import media from './../../data/media.json'
+
 export default class PhotographItem extends HTMLLIElement {
     constructor() {
         super()
@@ -19,8 +21,6 @@ export default class PhotographItem extends HTMLLIElement {
         img.classList.add('photographe-card__img')
         const imgLink = await import(`./../../assets/img/photo_profils/${portrait}`)
         img.src = imgLink.default
-        img.height = '200'
-        img.width = '200'
         this.appendChild(img)
 
         const h1 = document.createElement('h1')

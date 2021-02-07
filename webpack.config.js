@@ -7,7 +7,7 @@ const config = {
     entry: './src/app.js',
     output: {
         path: path.resolve("./dist"),
-        filename: "bundle.js"
+        filename: "js/bundle.[hash:7].js",
     },
     module: {
         rules: [
@@ -20,7 +20,7 @@ const config = {
                 use: {
                     loader: 'file-loader',
                     options: {
-                        name: '[name].[hash:7].[ext]',
+                        name: 'media/[ext]/[name].[hash:7].[ext]',
                     },
                 }
             }
@@ -28,7 +28,7 @@ const config = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].css'
+            filename: 'css/[name].[hash:7].css'
         }),
         new HtmlWebpackPlugin({
             favicon: "public/camera-solid.ico",
