@@ -1,5 +1,6 @@
 .photographe-card {
-	max-width: 350px;
+	box-sizing: border-box;
+	width: 350px;
 	list-style: none;
 	padding: 20px 10px;
 	display: flex;
@@ -30,6 +31,7 @@
 		font-weight: 400;
 		font-size: 36px;
 		color: $color-secondary;
+		text-align: center;
 	}
 
 	&__localisation {
@@ -60,5 +62,11 @@
 			padding: 2.5px 5px;
 			margin: 0 2px;
 		}
+	}
+}
+
+@media (max-width: 600px) {
+	.photographe-card {
+		width: 300px;
 	}
 }

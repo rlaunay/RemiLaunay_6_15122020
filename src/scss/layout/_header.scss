@@ -36,6 +36,7 @@
 
 @media (max-width: 1250px) {
 	.header {
+		height: auto;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 100px 100px;
@@ -51,10 +52,16 @@
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 	.header {
 		&__logo {
 			height: 30px;
 		}
+	}
+
+	.banner {
+		width: 100%;
+		margin-top: 20px;
+		padding: 20px 15px;
 	}
 }

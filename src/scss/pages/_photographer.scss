@@ -53,8 +53,31 @@
 				border-radius: 50px;
 				padding: 2.5px 5px;
 				margin: 0 2px;
-				cursor: pointer;
 			}
+		}
+	}
+
+	&-info-sup {
+		position: fixed;
+		bottom: -5px;
+		right: 36px;
+		width: 376px;
+		height: 89px;
+		background-color: #DB8876;
+
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		border-radius: 5px;
+
+		&__price,
+		&__nb-total-likes {
+			font-size: 24px;
+		}
+
+		&__nb-total-likes {
+			display: flex;
+			align-items: center;
 		}
 	}
 
@@ -63,5 +86,129 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 		grid-gap: 100px;
+
+		justify-items: center;
+	}
+}
+
+@media (max-width: 1050px) {
+	.main-photographe {
+		&-header {
+			padding: 0 25px;
+			margin-bottom: 30px;
+	
+			&__photo {
+				height: 150px;
+				width: 150px;
+			}
+
+			&__heading {
+				display: flex;
+				align-items: center;
+			}
+	
+			&__tile {
+				font-weight: 400;
+				font-size: 40px;
+				margin-right: 50px;
+			}
+	
+			&__localisation {
+				font-size: 20px;
+			}
+
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.main-photographe {
+		&-header {
+
+			&__contact {
+				position: fixed;
+				bottom: 30px;
+				left: 50%;
+				transform: translateX(-50%);
+				padding: 5px 20px;
+			}
+		}
+
+		&-info-sup {
+			display: none;
+		}
+
+		&__media-list {
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+			grid-gap: 50px;
+		}
+	}
+}
+
+@media (max-width: 700px) {
+	.main-photographe {
+		padding: 0 10px;
+		&-header {
+			background-color: $color-white;
+			padding: 0;
+			margin-bottom: 30px;
+	
+			&__photo {
+				height: 100px;
+				width: 100px;
+			}
+
+			&__left {
+				height: 160px;
+			}
+	
+			&__heading {
+				display: flex;
+				align-items: center;
+			}
+	
+			&__tile {
+				font-weight: 400;
+				font-size: 36px;
+			}
+	
+			&__localisation {
+				font-size: 13px;
+			}
+
+			&__tagline {
+				font-size: 13px;
+			}
+	
+			&__tags-list {
+				margin-top: 5px;
+				&--item {
+					font-size: 13px;
+				}
+			}
+		}
+
+		&-info-sup {
+			display: none;
+		}
+
+		&__media-list {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-gap: 50px;
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	.main-photographe {
+		&-header {
+			position: relative;
+			&__photo {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 0;
+			}
+		}
 	}
 }

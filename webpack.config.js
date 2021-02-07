@@ -31,11 +31,12 @@ const config = {
             filename: '[name].css'
         }),
         new HtmlWebpackPlugin({
-            favicon: "public/logo.svg",
+            favicon: "public/camera-solid.ico",
             template: 'public/index.html',
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
+            favicon: "public/camera-solid.ico",
             template: 'public/photographers/index.html',
             filename: 'photographers/index.html'
         })
