@@ -9,7 +9,7 @@ import AppVideo from "./js/customElements/AppMedia/AppVideo"
 import AppLightBox from "./js/customElements/AppLightBox"
 
 import keyboardEvent from './js/keyboard'
-
+import logo from './js/logo'
 import updatePhotographeInfo from "./js/photographePage/photographeInfo"
 
 import './scss/main.scss'
@@ -28,4 +28,5 @@ selectElements.forEach(selectElement => new Select(selectElement))
 
 updatePhotographeInfo(photographers)
 
-keyboardEvent() 
+keyboardEvent()
+logo()
