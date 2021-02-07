@@ -8,6 +8,8 @@ import AppPhoto from "./js/customElements/AppMedia/AppPhoto"
 import AppVideo from "./js/customElements/AppMedia/AppVideo"
 import AppLightBox from "./js/customElements/AppLightBox"
 
+import keyboardEvent from './js/keyboard'
+
 import updatePhotographeInfo from "./js/photographePage/photographeInfo"
 
 import './scss/main.scss'
@@ -25,3 +27,5 @@ const selectElements = document.querySelectorAll('[data-custom-select]')
 selectElements.forEach(selectElement => new Select(selectElement))
 
 updatePhotographeInfo(photographers)
+
+keyboardEvent() 

@@ -9,6 +9,11 @@ export default class PhotographItem extends HTMLLIElement {
     }
 
     async createPhotoghrapheItem({id, name, city, country, tags, tagline, price, portrait}) {
+        const link = document.createElement('a')
+        link.href = `photographers/#/${id}`
+        link.classList.add('photographe-card__link')
+        this.appendChild(link)
+
         this.id = id
         const img = document.createElement('img')
         img.classList.add('photographe-card__img')
