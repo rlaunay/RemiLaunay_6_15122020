@@ -1,0 +1,42 @@
+.main {
+    margin: 0 100px;
+
+    &__title {
+        font-size: 36px;
+        font-weight: 400;
+        color: $color-primary;
+    }
+
+    &__photographers-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-gap: 200px;
+
+        justify-items: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main {
+        &__photographers-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-gap: 50px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .main {
+        margin: 0;
+        &__title {
+            font-size: 14px;
+        }
+
+        &__photographers-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 25px;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FishEye</title>
+<!--		<link rel="stylesheet" href="./../dist/main.css" />-->
+		<script
+			src="https://kit.fontawesome.com/2c740296bb.js"
+			crossorigin="anonymous"
+			defer
+		></script>
+<!--		<script type="module" src="./../dist/bundle.js" defer></script>-->
+	</head>
+	<body>
+		<header class="banner">
+			<a href="../" id="logo-btn">
+				<img
+					class="header__logo"
+					src="../logo.svg"
+					alt="logo"
+				/>
+			</a>
+		</header>
+		<main class="main-photographe">
+			<div class="main-photographe-header">
+				<div class="main-photographe-header__left">
+					<div class="main-photographe-header__heading">
+						<h1 id="p-name" class="main-photographe-header__tile"></h1>
+						<button id="contact" class="btn main-photographe-header__contact">Contactez-moi</button>
+					</div>
+					<h2 id="p-location" class="main-photographe-header__localisation"></h2>
+					<h3 id="p-tagline" class="main-photographe-header__tagline"></h3>
+					<div id="p-tags" class="main-photographe-header__tags-list">
+					</div>
+				</div>
+				<img
+					id="p-profil"
+					class="main-photographe-header__photo"
+					src=""
+					alt="image de profil"
+				/>
+			</div>
+
+			<div class="filter">
+				<label class="filter__label" for="filter">Trier par</label>
+				<select data-custom-select id="filter">
+					<option value="popularity">Popularité</option>
+					<option value="date">Date</option>
+					<option value="title">Titre</option>
+				</select>
+			</div>
+			<ul id="photo-list" class="main-photographe__media-list">
+			</ul>
+			<div class="main-photographe-info-sup">
+				<span id="p-totalLikes" class="main-photographe-info-sup__nb-total-likes"></span>
+				<span id="p-price" class="main-photographe-info-sup__price"></span>
+			</div>
+		</main>
+		<div id="contact-modal" class="modal">
+			<form class="form" aria-dialog role=”dialog” aria-hidden="true">
+				<button class="modal__close" aria-roledescription="fermer la modal">
+					<svg width="42" height="42" viewBox="0 0 42 42" fill="white" xmlns="http://www.w3.org/2000/svg">
+						<path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="white"/>
+					</svg>
+				</button>
+				<h1 class="form__title"></h1>
+				<label for="firstname" class="form__label" aria-required="true">Prénom</label>
+				<input id="firstname" name="firstname" type="text" class="form__input" required>
+				<label for="lastname" class="form__label" aria-required="true">Nom</label>
+				<input id="lastname" name="lastname" type="text" class="form__input" required>
+				<label for="email" class="form__label" aria-required="true">Email</label>
+				<input id="email" name="email" type="email" class="form__input" required>
+				<label for="message" class="form__label" aria-required="true">Votre message</label>
+				<textarea name="message" id="message" class="form__textarea" cols="30" rows="5" required></textarea>
+				<input class="btn" type="submit" value="Envoyer">
+			</form>
+		</div>
+	</body>
+</html>
