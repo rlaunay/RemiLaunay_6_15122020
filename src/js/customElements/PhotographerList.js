@@ -11,20 +11,25 @@ export default class PhotographersList extends HTMLUListElement {
         photographers.forEach((photograph) => {
             const li = document.createElement('li', { is: 'photograph-item' })
             li.photograph = photograph
-            li.addEventListener('click', () => {
-                window.location.href = `photographers/#/${photograph.id}`
-            })
             this.appendChild(li)
         })
 
         document
             .querySelectorAll('.header__tags-list--item')
             .forEach((tagEl) => {
-                tagEl.addEventListener('click', this.filterList)
+                tagEl.parentElement.addEventListener('click', this.filterList)
             })
     }
 
     filterList(event) {
+
+        document
+            .querySelectorAll('.header__tags-list--item')
+            .forEach((tagEl) => {
+                tagEl.parentElement.removeAttribute('aria-current')
+            })
+
+        event.target.setAttribute('aria-current', 'catégorie')
         const tag = event.target.innerText.slice(1).toLowerCase()
         const selectedPhotographers = photographers.filter((photograph) =>
             photograph.tags.includes(tag)

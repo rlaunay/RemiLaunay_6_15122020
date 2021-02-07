@@ -5,6 +5,19 @@ export default class AppMedia extends HTMLElement {
         const container = document.createElement('div')
         container.classList.add('media')
 
+        const btn = document.createElement('button')
+        btn.setAttribute('aria-roledescription', 'ouvre la modal de contact du photographe')
+        btn.classList.add('btn-open-lightbox')
+
+        btn.addEventListener('click', (e) => {
+            const lightBox = document.createElement('app-lightbox')
+            const src = this.querySelector('.media__src').src
+            lightBox.setAttribute('data-clicked-src', src)
+            document.getElementById('photo-list').appendChild(lightBox)
+        })
+
+        container.appendChild(btn) 
+
         const { likes, price } = media.find(p => p.id === +id)
 
         const legend = document.createElement('div')

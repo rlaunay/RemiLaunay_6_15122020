@@ -15,6 +15,10 @@ export default class Select {
         return this.options.find(opt => opt.selected)
     }
 
+    get selectedOptionIndex() {
+        return this.options.indexOf(this.selectedOption)
+    }
+
     getFormattedOptions(options) {
         return [...options].map(opt => ({
             value: opt.value,
@@ -76,6 +80,22 @@ export default class Select {
 
         this.customSelect.addEventListener('blur', () => {
             this.optionsEl.classList.remove('show')
+        })
+
+        this.customSelect.addEventListener('keydown', e => {
+            switch(e.code) {
+                case "Enter":
+                    let index = this.selectedOptionIndex + 1
+                    if (index >= this.options.length) {
+                        index = 0
+                    }
+                    const nextvOption = this.options[index]
+                    if (nextvOption) {
+                        this.selectValue(nextvOption.value)
+                    }
+                    break
+
+            }
         })
     }
 }

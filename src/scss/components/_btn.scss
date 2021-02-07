@@ -12,3 +12,13 @@
 		border: 3px solid $color-grey;
 	}
 }
+
+.btn-open-lightbox {
+	border: none;
+	outline: none;
+	cursor: pointer;
+
+	&:focus {
+		border: 3px solid $color-grey;
+	}
+}

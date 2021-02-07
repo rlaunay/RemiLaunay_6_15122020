@@ -57,12 +57,19 @@ export default async function updatePhotographeInfo(photographers) {
 
 function openModal() {
     document.addEventListener('keyup', onKeyUp)
+    modalEl.setAttribute('aria-hidden', false)
+    document.querySelector('main').setAttribute('aria-hidden', 'true')
+    const firstInput = document.getElementById("firstname")
     modalEl.classList.add('show')
+    firstInput.focus()
 }
 
 function closeModal() {
     modalEl.classList.remove('show')
+    modalEl.setAttribute('aria-hidden', 'true')
+    document.querySelector('main').setAttribute('aria-hidden', 'false')
     document.removeEventListener('keyup', onKeyUp)
+    contactBtnEl.focus()
 }
 
 function onKeyUp(e) {

@@ -46,6 +46,8 @@ export default class AppLightBox extends HTMLElement {
         this.createMedia(this.url)
         this.mediaContainer.classList.add('lightbox__media')
         this.appendChild(this.mediaContainer)
+
+        this.mediaContainer.firstChild.focus()
     }
 
     createMedia(url) {
@@ -69,6 +71,8 @@ export default class AppLightBox extends HTMLElement {
             this.indexUrl = 0
         }
         this.createMedia(this.gallery[this.indexUrl])
+
+        this.mediaContainer.firstChild.focus()
     }
 
     prevMedia() {
@@ -77,6 +81,8 @@ export default class AppLightBox extends HTMLElement {
             this.indexUrl = this.gallery.length -1
         }
         this.createMedia(this.gallery[this.indexUrl])
+
+        this.mediaContainer.firstChild.focus()
     }
 
     close() {

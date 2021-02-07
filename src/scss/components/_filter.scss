@@ -2,10 +2,6 @@
 	display: flex;
 	align-items: center;
 
-	&:focus {
-		border: 3px solid $color-grey;		
-	}
-
 	&__label {
 		font-size: 18px;
 		font-weight: 700;
@@ -24,6 +20,10 @@
 		border: none;
 		outline: none;
 		z-index: 500;
+
+		&:focus {
+			border: 3px solid $color-grey;		
+		}
 
 		&--value {
 			display: flex;

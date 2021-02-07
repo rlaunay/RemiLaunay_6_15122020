@@ -1,3 +1,4 @@
+import media from './../../../data/media.json'
 import AppMedia from "./AppMedia";
 
 export default class AppPhoto extends AppMedia {
@@ -13,19 +14,15 @@ export default class AppPhoto extends AppMedia {
     async buildMedia(id, name) {
         super.buildMedia(id, name)
 
+        const { altText } = media.find(m => m.id === +id)
+
         const img = document.createElement('img')
         const imageLink = await import(`./../../../assets/img/photographe_photo/${this.getAttribute('data-pId')}/${name}`)
         img.src = imageLink.default
+        img.alt = altText
         img.classList.add('media__src')
 
-        img.addEventListener('click', (e) => {
-            const lightBox = document.createElement('app-lightbox')
-            lightBox.setAttribute('data-clicked-src', e.target.src)
-            document.getElementById('photo-list').appendChild(lightBox)
-        })
-
-        const leg = this.querySelector('.media__legend')
-        const container = this.querySelector('.media')
-        container.insertBefore(img, leg)
+        const container = this.querySelector('.btn-open-lightbox')
+        container.appendChild(img)
     }
 }
