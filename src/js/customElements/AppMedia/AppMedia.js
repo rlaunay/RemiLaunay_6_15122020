@@ -13,8 +13,8 @@ export default class AppMedia extends HTMLElement {
             const lightBox = document.createElement('app-lightbox')
             document.querySelector('header').setAttribute('aria-hidden', 'true')
             document.querySelector('main').setAttribute('aria-hidden', 'true')
-            const src = this.querySelector('.media__src').src
-            lightBox.setAttribute('data-clicked-src', src)
+            const img = this.querySelector('.media__src')
+            lightBox.setAttribute('data-clicked-src', img.getAttribute('src'))
             document.querySelector('body').appendChild(lightBox)
         })
 

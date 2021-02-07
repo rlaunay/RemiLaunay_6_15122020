@@ -10,17 +10,19 @@ export default class PhotographItem extends HTMLLIElement {
         this.createPhotoghrapheItem(this.photograph)
     }
 
-    async createPhotoghrapheItem({id, name, city, country, tags, tagline, price, portrait}) {
+    async createPhotoghrapheItem({id, name, city, country, tags, tagline, price, miniature}) {
         const link = document.createElement('a')
         link.href = `photographers/#/${id}`
         link.classList.add('photographe-card__link')
         this.appendChild(link)
 
+        const miniImg = media.find(m => m.id === +miniature)
         this.id = id
         const img = document.createElement('img')
         img.classList.add('photographe-card__img')
-        const imgLink = await import(`./../../assets/img/photo_profils/${portrait}`)
+        const imgLink = await import(`./../../assets/img/photographe_photo/${id}/${miniImg.image}`)
         img.src = imgLink.default
+        img.alt = miniImg.altText
         this.appendChild(img)
 
         const h1 = document.createElement('h1')

@@ -15,7 +15,9 @@ export default class AppLightBox extends HTMLElement {
         this.gallery = media.map(m => ({ src: m.getAttribute('src'), alt: m.getAttribute('alt') }))
 
         this.url = this.getAttribute('data-clicked-src')
+        console.log(this.url)
         this.indexUrl = this.gallery.findIndex(m => this.url === m.src)
+        
         this.alt = this.gallery[this.indexUrl].alt
         this.buildLightbox()
         this.setAttribute('aria-hidden', 'false')
