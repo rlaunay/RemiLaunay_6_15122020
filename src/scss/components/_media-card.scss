@@ -20,6 +20,8 @@
         width: 450px;
         object-fit: cover;
         border-radius: 5px;
+
+        cursor: pointer;
     }
 
     &__likes {
@@ -34,5 +36,29 @@
             color: $color-primary;
             font-size: 18px;
         }
+    }
+}
+
+@media (max-width: 900px) {
+    .media {
+        width: 350px;
+
+        &__src {
+            height: 350px;
+            width: 350px;
+        }
+
+    }
+}
+
+@media (max-width: 700px) {
+    .media {
+        width: 300px;
+
+        &__src {
+            height: 300px;
+            width: 300px;
+        }
+
     }
 }
