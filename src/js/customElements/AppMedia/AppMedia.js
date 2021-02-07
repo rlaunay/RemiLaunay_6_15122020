@@ -11,9 +11,11 @@ export default class AppMedia extends HTMLElement {
 
         btn.addEventListener('click', (e) => {
             const lightBox = document.createElement('app-lightbox')
+            document.querySelector('header').setAttribute('aria-hidden', 'true')
+            document.querySelector('main').setAttribute('aria-hidden', 'true')
             const src = this.querySelector('.media__src').src
             lightBox.setAttribute('data-clicked-src', src)
-            document.getElementById('photo-list').appendChild(lightBox)
+            document.querySelector('body').appendChild(lightBox)
         })
 
         container.appendChild(btn) 

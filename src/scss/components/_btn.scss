@@ -11,6 +11,10 @@
 	&:focus {
 		border: 3px solid $color-grey;
 	}
+
+	&:hover {
+		background-color: $color-secondary;
+	}
 }
 
 .btn-open-lightbox {

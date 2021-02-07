@@ -34,6 +34,14 @@
     }
   }
 
+  &__next,
+  &__prev,
+  &__close {
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
   &__next {
     grid-row: 1 / 2;
     grid-column: 3 / 4;
