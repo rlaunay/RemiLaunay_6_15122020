@@ -15,7 +15,7 @@ const formEl = document.querySelector('.form')
 window.addEventListener('hashchange', updatePhotographeInfo)
 
 /**
- * Affichage des infos du photographe dont l'id se trouve dans le hash de l url
+ * Gestion de la page /photographers
  */
 export default async function updatePhotographeInfo(photographers) {
     if (window.location.pathname.startsWith('/photographers')) {
