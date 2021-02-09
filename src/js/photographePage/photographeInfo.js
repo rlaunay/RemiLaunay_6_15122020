@@ -1,4 +1,5 @@
 import updatePhotoList from "./photoList";
+import updateTotalLikes from './likes';
 
 const nameEl = document.getElementById('p-name')
 const locationEl = document.getElementById('p-location')
@@ -52,6 +53,8 @@ export default async function updatePhotographeInfo(photographers) {
         contactBtnEl.addEventListener('click', openModal)
 
         updatePhotoList(id)
+
+        updateTotalLikes()
     }
 }
 

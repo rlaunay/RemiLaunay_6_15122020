@@ -8,8 +8,10 @@ export default class AppMedia extends HTMLElement {
         const container = document.createElement('div')
         container.classList.add('media')
 
+        const { likes, price, altText } = media.find(p => p.id === +id && p.photographerId === +this.getAttribute('data-pid'))
+
         const btn = document.createElement('button')
-        btn.setAttribute('aria-roledescription', 'ouvre la modal de contact du photographe')
+        btn.setAttribute('aria-label', `Ouvre la lightbox avec la photo: ${altText}`)
         btn.classList.add('btn-open-lightbox')
 
         btn.addEventListener('click', (e) => {
@@ -21,9 +23,7 @@ export default class AppMedia extends HTMLElement {
             document.querySelector('body').appendChild(lightBox)
         })
 
-        container.appendChild(btn) 
-
-        const { likes, price } = media.find(p => p.id === +id)
+        container.appendChild(btn)
 
         const legend = document.createElement('div')
         legend.classList.add('media__legend')
@@ -38,17 +38,11 @@ export default class AppMedia extends HTMLElement {
         priceEl.classList.add('media__price')
         legend.appendChild(priceEl)
 
+        localStorage.setItem(+id, likes)
+
         const likesEl = document.createElement('span')
-        likesEl.innerText = `${likes}`
+        likesEl.innerText = `${localStorage.getItem(+id)}`
         likesEl.classList.add('media__likes')
-        likesEl.addEventListener('click', () => {
-            const likesEl = document.getElementById(id).querySelector('.media__likes')
-            let likes = +likesEl.innerText
-            likes++
-            const ico = likesEl.childNodes[1]
-            likesEl.innerText = likes
-            likesEl.appendChild(ico)
-        })
 
         const heart = document.createElement('div')
         heart.innerHTML = '<i class="fas fa-heart"></i>'

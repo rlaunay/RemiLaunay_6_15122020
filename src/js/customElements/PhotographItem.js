@@ -16,6 +16,7 @@ export default class PhotographItem extends HTMLLIElement {
     async createPhotoghrapheItem({id, name, city, country, tags, tagline, price, miniature}) {
         const link = document.createElement('a')
         link.href = `photographers/#/${id}`
+        link.setAttribute('aria-label', `liens vers la page du photographe ${name}`)
         link.classList.add('photographe-card__link')
         this.appendChild(link)
 

@@ -1,7 +1,6 @@
 import media from "./../../data/media.json"
 
 const grilleEl = document.getElementById('photo-list')
-const totalLikesEl = document.getElementById('p-totalLikes')
 
 if (window.location.pathname.startsWith('/photographers')) {
     const selectEl = document.getElementById('filter')
@@ -19,11 +18,6 @@ if (window.location.pathname.startsWith('/photographers')) {
 export default function updatePhotoList(pId, sortBy = 'popularity') {
     grilleEl.innerHTML = ""
     const photoList = media.filter(p => p.photographerId === pId)
-
-    const heart = document.createElement('div')
-    heart.innerHTML = '<i class="fas fa-heart"></i>'
-    totalLikesEl.innerText = `${photoList.reduce((prev, cur) => prev + cur.likes, 0)}`
-    totalLikesEl.appendChild(heart)
 
     let sortedPhotoList = []
 
