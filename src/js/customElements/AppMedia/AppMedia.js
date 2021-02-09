@@ -1,5 +1,8 @@
 import media from "../../../data/media.json";
 
+/**
+ * Custom element de l'objet media qui genère la base du media
+ */
 export default class AppMedia extends HTMLElement {
     buildMedia(id, name) {
         const container = document.createElement('div')

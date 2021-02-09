@@ -1,5 +1,8 @@
 import media from './../../data/media.json'
 
+/**
+ * Items representant un photographe sur la page d accueil avec ces informations 
+ */
 export default class PhotographItem extends HTMLLIElement {
     constructor() {
         super()

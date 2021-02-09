@@ -1,5 +1,8 @@
 import AppMedia from "./AppMedia";
 
+/**
+ * custom element qui herite de media et qui permet de creer une carte de media Video
+ */
 export default class AppVideo extends AppMedia {
     constructor() {
         super()

@@ -14,7 +14,7 @@ if (window.location.pathname.startsWith('/photographers')) {
 }
 
 /**
- * Mise en place de la grille de photo
+ * Mise en place de la grille de photo en fonction du trie
  */
 export default function updatePhotoList(pId, sortBy = 'popularity') {
     grilleEl.innerHTML = ""

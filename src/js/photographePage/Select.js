@@ -1,3 +1,6 @@
+/**
+ * Class permettant de grer un element select de maniere plsus personnaliser
+ */
 export default class Select {
     constructor(selectElement) {
         this.selectElement = selectElement

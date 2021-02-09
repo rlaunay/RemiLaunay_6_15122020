@@ -1,5 +1,8 @@
 import photographers from "../../data/photographers.json";
 
+/**
+ * Genere la list des photographes sur la page d accueil
+ */
 export default class PhotographersList extends HTMLUListElement {
     constructor() {
         super()

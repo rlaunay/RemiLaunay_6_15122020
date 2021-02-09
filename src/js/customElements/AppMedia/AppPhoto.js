@@ -1,6 +1,9 @@
 import media from './../../../data/media.json'
 import AppMedia from "./AppMedia";
 
+/**
+ * custom element qui herite de media et qui permet de creer une carte de media Photo
+ */
 export default class AppPhoto extends AppMedia {
     constructor() {
         super()
